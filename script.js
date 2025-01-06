@@ -1,28 +1,49 @@
 const myLibrary = [];
 
-function Book(title, author) {
+function Book(title, author, genre, pages, isRead) {
   this.title = title;
   this.author = author;
+  this.genre = genre;
+  this.pages = pages;
+  this.isRead = isRead;
 }
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-let test = new Book("test", "ray");
-let test2 = new Book("test", "ray");
+let book1 = new Book("1984", "George Orwell", "Dystopian", 328, true);
+let book2 = new Book("The Outsiders", "S.E. Hinton", "Young adult Fiction", 192, true);
 
-addBookToLibrary(test);
-addBookToLibrary(test2);
+addBookToLibrary(book1);
+addBookToLibrary(book2);
 
 for (book of myLibrary) {
   const card = document.createElement("div");
   const title = document.createElement("div");
-  title.textContent = book.title;
   const author = document.createElement("div");
+  const genre = document.createElement("div");
+  const pages = document.createElement("div");
+  const isRead = document.createElement("div");
+  title.textContent = book.title;
   author.textContent = book.author;
+  genre.textContent = book.genre;
+  pages.textContent = book.pages;
+  if(book.isRead) {
+    isRead.textContent = "Read"
+  }
+  else {
+    isRead.textContent = "Unread"
+  }
   card.appendChild(title);
   card.appendChild(author);
+  card.appendChild(genre);
+  card.appendChild(pages);
+  card.appendChild(isRead);
   const main = document.querySelector(".main");
   main.appendChild(card);
+
 }
+
+const btn = document.querySelector("#add");
+btn.onclick = () => console.log("hi");
