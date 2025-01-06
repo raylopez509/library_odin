@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  gap: 10px;
+}
+
+.main > div {
+  height: 150px;
+  width: 150px;
+  border: 1px solid;
+}
+
+.test {
+  border:1px solid red;
+}
