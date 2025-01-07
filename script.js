@@ -45,5 +45,23 @@ for (book of myLibrary) {
 
 }
 
-const btn = document.querySelector("#add");
-btn.onclick = () => console.log("hi");
+const dialog = document.querySelector("dialog");
+
+const addBookButton = document.querySelector("#add");
+const confirmAddButton = document.querySelector("#modal-add");
+
+
+// dialog.addEventListener("close", (e) => {
+//   dialog.close();
+// });
+
+addBookButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+confirmAddButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  dialog.close();
+});
+
+
