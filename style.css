@@ -9,6 +9,14 @@
   border: 1px solid;
 }
 
-.test {
-  border:1px solid red;
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+::backdrop {
+  background-color: black;
+  opacity: 0.75;
 }
