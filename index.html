@@ -10,6 +10,24 @@
     <div class="main">
     </div>
     <button id="add">Add a book</button>
+    <dialog>
+      <h1>Add a Book</h1>
+      <p>Insert the following information</p>
+      <form>
+        <div class="input-container">
+          <label>Title: <input type="text" autofocus></label>
+          <label>Author: <input type="text"></label>
+          <label>Genre: <input type="text"></label>
+          <label>Number of Pages: <input type="text"></label>
+          <label>Read <input type="checkbox"></label>
+        </div>
+        <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="modal-add">Add</button>
+        </div>
+      </form>
+    </dialog>
+        
     <script src="script.js"></script>
   </body>
 </html>
