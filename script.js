@@ -13,7 +13,13 @@ function addBookToLibrary(book) {
 }
 
 let book1 = new Book("1984", "George Orwell", "Dystopian", 328, true);
-let book2 = new Book("The Outsiders", "S.E. Hinton", "Young adult Fiction", 192, true);
+let book2 = new Book(
+  "The Outsiders",
+  "S.E. Hinton",
+  "Young adult Fiction",
+  192,
+  true
+);
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);
@@ -29,11 +35,10 @@ for (book of myLibrary) {
   author.textContent = book.author;
   genre.textContent = book.genre;
   pages.textContent = book.pages;
-  if(book.isRead) {
-    isRead.textContent = "Read"
-  }
-  else {
-    isRead.textContent = "Unread"
+  if (book.isRead) {
+    isRead.textContent = "Read";
+  } else {
+    isRead.textContent = "Unread";
   }
   card.appendChild(title);
   card.appendChild(author);
@@ -42,14 +47,12 @@ for (book of myLibrary) {
   card.appendChild(isRead);
   const main = document.querySelector(".main");
   main.appendChild(card);
-
 }
 
 const dialog = document.querySelector("dialog");
 
 const addBookButton = document.querySelector("#add");
 const confirmAddButton = document.querySelector("#modal-add");
-
 
 // dialog.addEventListener("close", (e) => {
 //   dialog.close();
@@ -59,9 +62,23 @@ addBookButton.addEventListener("click", () => {
   dialog.showModal();
 });
 
-confirmAddButton.addEventListener("click", (e) => {
-  e.preventDefault();
+// confirmAddButton.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   dialog.close();
+// });
+
+dialog.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let title = document.querySelector(".title").value;
+  let author = document.querySelector(".author").value;
+  let genre = document.querySelector(".genre").value;
+  let pages = document.querySelector(".pages").value;
+  let read = document.querySelector(".read").checked;
+  // if (document.querySelector(".read").value == "Read") {
+  //   test = "read";
+  // } else {
+  //   test = "unread";
+  // }
+  console.log(read);
   dialog.close();
 });
-
-
